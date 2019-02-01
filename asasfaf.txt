@@ -1,0 +1,45 @@
+    public function actionDropdua($id){
+        $model = Kategori::find()->where(['kat_level' => 2 ])->andWhere(array('up_level' => $id))->select(['id','kategori'])->orderBy(['id'=>SORT_ASC])->all();
+        if (!empty($model)) {
+            echo '<option>pilih</option>';
+            foreach($model as $model) {
+                echo "<option value='".$model->id."'>".$model->kategori."</option>";
+            }
+        } else {
+            echo "<script>tidak ada pilihan lain</option>";
+        }
+    }
+
+    public function actionDroptiga($id){
+        $model = Kategori::find()->where(['kat_level' => 3 ])->andWhere(array('up_level' => $id))->select(['id','kategori'])->orderBy(['id'=>SORT_ASC])->all();
+        if (!empty($model)) {
+            echo '<option>pilih</option>';
+            foreach($model as $model) {
+                echo "<option value='".$model->id."'>".$model->kategori."</option>";
+            }
+        } else {
+            echo "<option>tidak ada pilihan lain</option>";
+        }
+    }
+    public function actionDropempat($id){
+        $model = Kategori::find()->where(['kat_level' => 4 ])->andWhere(array('up_level' => $id))->select(['id','kategori'])->orderBy(['id'=>SORT_ASC])->all();
+        if (!empty($model)) {
+            echo '<option>pilih</option>';
+            foreach($model as $model) {
+                echo "<option value='".$model->id."'>".$model->kategori."</option>";
+            }
+        } else {
+            echo "<option>tidak ada pilihan lain</option>";
+        }
+    }
+    public function actionDroplima($id){
+        $model = Kategori::find()->where(['kat_level' => 5 ])->andWhere(array('up_level' => $id))->select(['id','kategori'])->orderBy(['id'=>SORT_ASC])->all();
+        if (!empty($model)) {
+            echo '<option>pilih</option>';
+            foreach($model as $model) {
+                echo "<option value='".$model->id."'>".$model->kategori."</option>";
+            }
+        } else {
+            echo "<option>tidak ada pilihan lain</option>";
+        }
+    }
