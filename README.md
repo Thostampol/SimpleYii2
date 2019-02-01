@@ -1,1 +1,1 @@
-SinpleCrud Yii2
+SimpleCrud backend Yii2
